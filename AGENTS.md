@@ -65,6 +65,27 @@
 - Java 程式碼可編譯（至少語法正確）。
 - 說明段落有時間與空間複雜度（建議補齊）。
 
+## Category Index Rules
+
+1. 每個題型資料夾應有 `README.md` 作為索引表。
+2. 索引表至少包含三欄：`題目名稱`、`難易度`、`連結`。
+3. `題目名稱` 取自各題檔案第一個 H1。
+4. `難易度` 使用題內既有彩色標籤（Easy 綠、Medium 橘）。
+5. `連結` 必須為相對路徑，且檔名空白需轉碼為 `%20`，避免 Markdown 連結失效。
+6. 建議按題號排序，便於快速查找與複習。
+
+### Index Table Template
+
+```md
+# <Category> Index
+
+此索引整理 `<folder>` 的題目、難易度與連結。
+
+| 題目名稱 | 難易度 | 連結 |
+| --- | --- | --- |
+| 6. Zigzag Conversion | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [6. Zigzag Conversion](./6.%20Zigzag%20Conversion.md) |
+```
+
 ## Batch Workflow (Agent)
 
 1. 掃描標題是否符合檔名。
@@ -92,6 +113,26 @@ perl -0pi -e 's/^Easy$/<span style="color: #16a34a;"><strong>Easy<\/strong><\/sp
 for f in top-150-interview/array-string/*.md; do
   opencc -i "$f" -o "$f.tmp" -c s2twp.json && mv "$f.tmp" "$f"
 done
+
+# 5) 產生題型索引表（README.md）
+{
+  echo '# Array/String Index'
+  echo ''
+  echo '此索引整理 `top-150-interview/array-string` 的題目、難易度與連結。'
+  echo ''
+  echo '| 題目名稱 | 難易度 | 連結 |'
+  echo '| --- | --- | --- |'
+  find top-150-interview/array-string -maxdepth 1 -type f -name '*.md' -print0 \
+    | while IFS= read -r -d '' p; do
+        b=$(basename "$p")
+        [ "$b" = 'README.md' ] && continue
+        title=$(rg '^# ' "$p" -m1 | sed 's/^# //')
+        diff=$(rg '^<span style="color: #[0-9a-f]{6};"><strong>(Easy|Medium|Hard)</strong></span>$' "$p" -m1 || true)
+        [ -z "$diff" ] && diff='Unknown'
+        url=${b// /%20}
+        printf '| %s | %s | [%s](./%s) |\n' "$title" "$diff" "$title" "$url"
+      done | sort -t '|' -k2,2V
+} > top-150-interview/array-string/README.md
 ```
 
 ## Extension Plan
