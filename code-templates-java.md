@@ -519,6 +519,7 @@ class Solution {
 ```
 
 > **Bottom-up 轉換步驟：**
+>
 > 1. 依狀態變數大小初始化 `dp[]` 陣列
 > 2. 設定 base case（通常初始化為 0）
 > 3. 從 base case 往答案方向迭代（注意方向）
