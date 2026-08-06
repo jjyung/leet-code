@@ -11,13 +11,14 @@
 ## Canonical File Rules
 
 1. 檔名格式
-- 使用 LeetCode 題號與英文題名：`<id>. <title>.md`
-- 範例：`28. Find the Index of the First Occurrence in a String.md`
+- 使用 LeetCode 三位數題號與英文題名：`<id3>. <title>.md`
+- 題號不足三位時補零（例如 `6 -> 006`、`28 -> 028`）。
+- 範例：`028. Find the Index of the First Occurrence in a String.md`
 
 2. H1 標題格式
 - 第一個 H1 必須與檔名（去掉 `.md`）完全一致。
 - 禁止前綴：`X. Top Interview 150 - `。
-- 正確範例：`# 28. Find the Index of the First Occurrence in a String`
+- 正確範例：`# 028. Find the Index of the First Occurrence in a String`
 
 3. 語言規範
 - 中文內容統一使用繁體中文（zh-TW）。
@@ -32,7 +33,7 @@
 ## Recommended Markdown Structure
 
 ```md
-# <id>. <title>
+# <id3>. <title>
 
 ## Question
 
@@ -83,7 +84,7 @@
 
 | 題目名稱 | 難易度 | 連結 |
 | --- | --- | --- |
-| 6. Zigzag Conversion | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [6. Zigzag Conversion](./6.%20Zigzag%20Conversion.md) |
+| 006. Zigzag Conversion | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [006. Zigzag Conversion](./006.%20Zigzag%20Conversion.md) |
 ```
 
 ## Batch Workflow (Agent)
