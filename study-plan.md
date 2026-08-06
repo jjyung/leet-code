@@ -61,10 +61,19 @@
 
 ## 24-Hour Plan
 
-1. Hour 1-2：模板與語法骨架快速整理。
-2. Hour 3-8：高頻題型 12 題（以 medium 為主）。
-3. Hour 9-12：Tree/Graph 6 題（Traversal、BFS、DFS）。
-4. Hour 13-16：2 場完整 mock interview。
-5. Hour 17-20：回放 mock，修正敘事與邊界處理。
-6. Hour 21-24：行為題、履歷亮點、公司研究與輕量複習。
-7. 目標：面試當下能穩定輸出思路與程式碼。
+1. Hour 1-2：模板與語法骨架快速整理（Two Pointers、Sliding Window、HashMap、DFS/BFS 模板）。
+2. Hour 3-8：高頻題型 12 題（以 medium 為主，easy 補節奏）。
+3. 高頻題型清單（優先順序）：
+   - Array/String（遍歷、原地操作、雙指標）
+   - HashMap / Set（計數、去重、索引映射）
+   - Two Pointers（對撞、快慢指標）
+   - Sliding Window（最長/最短子陣列、字串覆蓋）
+   - Stack（括號、單調棧）
+   - Binary Tree 基礎（前中後序、層序、遞迴）
+   - Graph 基礎（BFS/DFS、連通性）
+   - Intervals（排序 + 合併）
+4. Hour 9-12：Tree/Graph 6 題（Traversal、BFS、DFS、1 題綜合）。
+5. Hour 13-16：2 場完整 mock interview（每場 45-60 分鐘 + 10 分鐘口頭複盤）。
+6. Hour 17-20：回放 mock，修正敘事與邊界處理，重做錯題 4-6 題。
+7. Hour 21-24：行為題、履歷亮點、公司研究與輕量複習，最後 30-60 分鐘收斂筆記並提早休息。
+8. 目標：面試當下能穩定輸出思路與程式碼，並在 35-40 分鐘內完成 1 題 medium。
