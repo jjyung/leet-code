@@ -8,6 +8,15 @@
 - Primary content area: `top-150-interview/**`
 - Current normalized folder: `top-150-interview/array-string`
 
+## Authorization and File Scope
+
+- 本專案以 repository 根目錄為預設工作範圍。
+- 即使執行環境提供 full access，也不代表使用者已授權操作專案外的檔案。
+- 在讀取、建立、修改、刪除、搬移或以其他方式操作專案外檔案前，必須先向使用者說明目標與原因，並取得明確同意。
+- 若任務可在專案內完成，優先限制在專案內；不得因方便而擴大操作範圍。
+- 未取得同意時，遇到需要專案外檔案的情況應先暫停並詢問，不得自行假設授權。
+- 執行 `git`、測試或其他命令時，也要避免讓命令修改專案外的檔案；若無法避免，先取得使用者同意。
+
 ## Canonical File Rules
 
 1. 檔名格式
