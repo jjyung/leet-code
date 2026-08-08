@@ -9,7 +9,7 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 
 ## Workflow
 
-1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`），先保留既有題目敘述與格式。
+1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`），先保留既有題目敘述的語言與核心內容，再整理格式。
 2. 從檔名、題目敘述或 LeetCode 連結確認題號、題名與難度；不要在未確認時猜測題意。
 3. 選擇適合的演算法，說明核心觀察、資料結構、指標／迴圈不變量，以及為何能得到正確答案。
 4. 補上可直接提交到 LeetCode 的 Java `class Solution`。除非題目要求，避免加入 `package`、`main` 或不必要的輸入輸出程式。
@@ -23,6 +23,21 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 - 檔名使用三位數題號與英文題名：`<id3>. <title>.md`。
 - 第一個 H1 必須與檔名（去除 `.md`）完全一致，不加 `Top Interview 150 -` 前綴。
 - 中文使用繁體中文（zh-TW）。保留題目原文的英文專有名詞與程式識別字。
+- `Question` 區塊維持英文，包含題目敘述、輸入輸出、限制條件與範例；不要將題目翻譯成中文。這是為了讓讀者維持與 LeetCode 上機考試一致的英文讀題習慣，避免只習慣中文後無法理解英文題意。
+- 英文題目可以整理成清楚、易讀的 Markdown，不必逐字保留原始純文字排版。可使用段落、條列、表格、`inline code`、以及 Java／text code block 呈現輸入輸出與範例，但不得改變題意、數值、變數名稱或範例結果。
+- 範例建議使用以下格式，讓輸入、輸出與解釋容易掃讀：
+
+```md
+### Example 1
+
+**Input:** `s = "abcabcbb"`
+
+**Output:** `3`
+
+**Explanation:** The answer is `"abc"`, with a length of `3`.
+```
+
+- `Answer` 區塊的解題思路、程式碼說明與複雜度分析使用繁體中文；Java 程式碼、方法名稱、變數名稱與 LeetCode API 保持原樣。
 - 難度使用彩色標籤：Easy `#16a34a`、Medium `#f59e0b`；若規範支援其他難度，沿用該規範。
 - 建議結構：`Question`、難度、題目敘述／連結、`Answer`、解題思路、Java 程式碼、說明與複雜度。
 
