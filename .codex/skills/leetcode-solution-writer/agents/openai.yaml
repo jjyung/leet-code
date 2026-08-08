@@ -1,0 +1,4 @@
+interface:
+  display_name: "LeetCode Solution Writer"
+  short_description: "撰寫符合專案規範的 LeetCode Java 題解"
+  default_prompt: "使用 $leetcode-solution-writer 撰寫這題的 Java 程式碼與繁體中文詳解。"

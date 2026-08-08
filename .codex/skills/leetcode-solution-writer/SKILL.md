@@ -1,0 +1,45 @@
+---
+name: leetcode-solution-writer
+description: Write or complete LeetCode solution Markdown files with Java code and Traditional Chinese explanations. Use when the user asks to add a solution, explanation, algorithm, Java implementation, complexity analysis, or documentation for a LeetCode problem in a repository.
+---
+
+# LeetCode Solution Writer
+
+撰寫或補完 LeetCode 題解文件，預設使用 Java 程式碼與繁體中文說明。
+
+## Workflow
+
+1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`），先保留既有題目敘述與格式。
+2. 從檔名、題目敘述或 LeetCode 連結確認題號、題名與難度；不要在未確認時猜測題意。
+3. 選擇適合的演算法，說明核心觀察、資料結構、指標／迴圈不變量，以及為何能得到正確答案。
+4. 補上可直接提交到 LeetCode 的 Java `class Solution`。除非題目要求，避免加入 `package`、`main` 或不必要的輸入輸出程式。
+5. 在說明中明確標示時間複雜度與空間複雜度，並定義複雜度中的 `n`。
+6. 檢查 Java 語法、邊界條件、Markdown code fence 與文件標題；必要時以最小範例驗證邏輯。
+
+## Markdown Rules
+
+遵循專案既有規範；若 repository instructions 有更具體要求，以其為準：
+
+- 檔名使用三位數題號與英文題名：`<id3>. <title>.md`。
+- 第一個 H1 必須與檔名（去除 `.md`）完全一致，不加 `Top Interview 150 -` 前綴。
+- 中文使用繁體中文（zh-TW）。保留題目原文的英文專有名詞與程式識別字。
+- 難度使用彩色標籤：Easy `#16a34a`、Medium `#f59e0b`；若規範支援其他難度，沿用該規範。
+- 建議結構：`Question`、難度、題目敘述／連結、`Answer`、解題思路、Java 程式碼、說明與複雜度。
+
+標籤範例：
+
+```md
+<span style="color: #16a34a;"><strong>Easy</strong></span>
+```
+
+## Java Guidance
+
+- `String` 內容比較必須使用 `.equals()` 或安全的 `Objects.equals()`，不可用 `==`；`==` 比較的是物件參考，即使字串常值可能共用 String Pool，也不能依賴此行為。
+- 正確處理空陣列、單一元素、長度不符、重複值、負數與題目允許的極端輸入。
+- 依題目限制選擇 `int` 或 `long`，避免乘法或累加溢位。
+- 若使用 `HashMap`、`HashSet` 等 Java 標準類別，加入必要的 `import`；保持程式碼可讀且可編譯。
+- 說明程式碼中的關鍵判斷，不要只逐行翻譯程式碼。
+
+## Scope
+
+本技能負責建立或修改題解內容。不要自行 commit、push、修改索引或處理無關檔案，除非使用者明確要求。
