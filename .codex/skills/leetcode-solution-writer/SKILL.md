@@ -25,17 +25,19 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 - 中文使用繁體中文（zh-TW）。保留題目原文的英文專有名詞與程式識別字。
 - `Question` 區塊維持英文，包含題目敘述、輸入輸出、限制條件與範例；不要將題目翻譯成中文。這是為了讓讀者維持與 LeetCode 上機考試一致的英文讀題習慣，避免只習慣中文後無法理解英文題意。
 - 英文題目可以整理成清楚、易讀的 Markdown，不必逐字保留原始純文字排版。可使用段落、條列、表格、`inline code`、以及 Java／text code block 呈現輸入輸出與範例，但不得改變題意、數值、變數名稱或範例結果。
-- 範例建議使用以下格式，讓輸入、輸出與解釋容易掃讀：
+- 每個範例的 `Input`、`Output`、`Explanation` 與其他範例內容，必須完整放在獨立的 `text` code block 內；`Example` 標題置於 code block 外。
+- 移除無意義的換行與只含空白的行；標題、段落、列表與 code block 之間只保留 Markdown 結構所需的單一空行，不要在 code block 內任意刪除必要內容。
+- 範例使用以下格式，讓輸入、輸出與解釋容易掃讀：
 
-```md
+````md
 ### Example 1
 
-**Input:** `s = "abcabcbb"`
-
-**Output:** `3`
-
-**Explanation:** The answer is `"abc"`, with a length of `3`.
+```text
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with a length of 3.
 ```
+````
 
 - `Answer` 區塊的解題思路、程式碼說明與複雜度分析使用繁體中文；Java 程式碼、方法名稱、變數名稱與 LeetCode API 保持原樣。
 - 難度使用彩色標籤：Easy `#16a34a`、Medium `#f59e0b`；若規範支援其他難度，沿用該規範。
