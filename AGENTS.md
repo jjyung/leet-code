@@ -44,7 +44,7 @@
 ```md
 # <id3>. <title>
 
-## Question
+## Problem
 
 <span style="color: #16a34a;"><strong>Easy</strong></span>
 

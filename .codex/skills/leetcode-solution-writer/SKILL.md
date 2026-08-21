@@ -40,14 +40,14 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 ```text
 Input: nums = [1,3,5,6], target = 5
 Output: 2
+Explanation: The target 5 is found at index 2.
 ```
-
-**Explanation:** The target `5` is found at index `2`.
 ````
 
-- `Input` 與 `Output` 必須放在同一個 `text` code block 中，不使用 inline code 取代。
-- 每個範例都必須有 `**Explanation:**`，且說明必須與該範例的輸入和輸出一致。
-- 不得改變題目原有的變數名稱、數值或輸出結果；範例內容維持英文。
+- `Input`、`Output` 與 `Explanation` 必須放在同一個獨立的 `text` code block 中，不使用 inline code 取代。
+- `Example` 標題必須置於 code block 外。
+- `Explanation` 必須與該範例的輸入和輸出一致，且範例內容維持英文。
+- 不得改變題目原有的變數名稱、數值或輸出結果。
 
 ### 程式碼與內容
 
@@ -67,7 +67,9 @@ Output: 2
 - 中文使用繁體中文（zh-TW）。保留題目原文的英文專有名詞與程式識別字。
 - `Question` 區塊維持英文，包含題目敘述、輸入輸出、限制條件與範例；不要將題目翻譯成中文。這是為了讓讀者維持與 LeetCode 上機考試一致的英文讀題習慣，避免只習慣中文後無法理解英文題意。
 - 英文題目可以整理成清楚、易讀的 Markdown，不必逐字保留原始純文字排版。可使用段落、條列、表格、`inline code`、以及 Java／text code block 呈現輸入輸出與範例，但不得改變題意、數值、變數名稱或範例結果。
-- 範例必須使用以下格式，讓輸入、輸出與解釋容易掃讀：
+- 每個範例的 `Input`、`Output`、`Explanation` 與其他範例內容，必須完整放在獨立的 `text` code block 內；`Example` 標題置於 code block 外。
+- 移除無意義的換行與只含空白的行；標題、段落、列表與 code block 之間只保留 Markdown 結構所需的單一空行，不要在 code block 內任意刪除必要內容。
+- 範例使用以下格式，讓輸入、輸出與解釋容易掃讀：
 
 ````md
 ### Example 1
@@ -75,9 +77,8 @@ Output: 2
 ```text
 Input: s = "abcabcbb"
 Output: 3
+Explanation: The answer is "abc", with a length of 3.
 ```
-
-**Explanation:** The answer is `"abc"`, with a length of `3`.
 ````
 
 - `Answer` 區塊的解題思路、程式碼說明與複雜度分析使用繁體中文；Java 程式碼、方法名稱、變數名稱與 LeetCode API 保持原樣。
