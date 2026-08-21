@@ -15,6 +15,48 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 4. 補上可直接提交到 LeetCode 的 Java `class Solution`。除非題目要求，避免加入 `package`、`main` 或不必要的輸入輸出程式。
 5. 在說明中明確標示時間複雜度與空間複雜度，並定義複雜度中的 `n`。
 6. 檢查 Java 語法、邊界條件、Markdown code fence 與文件標題；必要時以最小範例驗證邏輯。
+7. 完成後執行 Review 階段，依照下方檢查表確認必要章節、範例格式、程式碼與內容一致性；未通過前不要交付文件。
+
+## Review
+
+完成題解後，必須逐項確認以下內容：
+
+### 必要章節
+
+- 第一個 H1 存在，且與檔名（去掉 `.md`）完全一致。
+- `## Question` 存在，並依序包含：難度標籤、英文題目敘述、限制條件、範例與 LeetCode 題目連結。
+- `## Answer` 存在，並包含：`### 解題思路`、Java 程式碼區塊，以及 `### 說明`。
+- `### 說明` 必須涵蓋關鍵判斷、邊界條件、時間複雜度與空間複雜度，並定義複雜度中的 `n`。
+
+若原始題目沒有明確列出限制條件，先從可靠的題目來源確認；無法確認時不要自行捏造數值。
+
+### Example 格式
+
+每個範例都必須使用以下格式：
+
+````md
+### Example 1
+
+```text
+Input: nums = [1,3,5,6], target = 5
+Output: 2
+```
+
+**Explanation:** The target `5` is found at index `2`.
+````
+
+- `Input` 與 `Output` 必須放在同一個 `text` code block 中，不使用 inline code 取代。
+- 每個範例都必須有 `**Explanation:**`，且說明必須與該範例的輸入和輸出一致。
+- 不得改變題目原有的變數名稱、數值或輸出結果；範例內容維持英文。
+
+### 程式碼與內容
+
+- Java 程式碼使用可直接提交的 `class Solution`，不包含 `package`、`main` 或除題目要求外的輸入輸出程式。
+- Java code fence 已正確閉合，且關鍵流程有繁體中文註解。
+- 解題思路描述的演算法、程式碼實作與複雜度分析彼此一致。
+- 檢查空陣列、單一元素、邊界索引、重複值、負數與題目允許的極端輸入等適用的邊界條件。
+- 中文內容使用繁體中文；`Question` 區塊的題目敘述、限制條件與範例使用英文。
+- 執行 Markdown whitespace／fence 檢查，並確認只修改使用者指定的題解檔案。
 
 ## Markdown Rules
 
@@ -25,17 +67,18 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 - 中文使用繁體中文（zh-TW）。保留題目原文的英文專有名詞與程式識別字。
 - `Question` 區塊維持英文，包含題目敘述、輸入輸出、限制條件與範例；不要將題目翻譯成中文。這是為了讓讀者維持與 LeetCode 上機考試一致的英文讀題習慣，避免只習慣中文後無法理解英文題意。
 - 英文題目可以整理成清楚、易讀的 Markdown，不必逐字保留原始純文字排版。可使用段落、條列、表格、`inline code`、以及 Java／text code block 呈現輸入輸出與範例，但不得改變題意、數值、變數名稱或範例結果。
-- 範例建議使用以下格式，讓輸入、輸出與解釋容易掃讀：
+- 範例必須使用以下格式，讓輸入、輸出與解釋容易掃讀：
 
-```md
+````md
 ### Example 1
 
-**Input:** `s = "abcabcbb"`
-
-**Output:** `3`
+```text
+Input: s = "abcabcbb"
+Output: 3
+```
 
 **Explanation:** The answer is `"abc"`, with a length of `3`.
-```
+````
 
 - `Answer` 區塊的解題思路、程式碼說明與複雜度分析使用繁體中文；Java 程式碼、方法名稱、變數名稱與 LeetCode API 保持原樣。
 - 難度使用彩色標籤：Easy `#16a34a`、Medium `#f59e0b`；若規範支援其他難度，沿用該規範。
