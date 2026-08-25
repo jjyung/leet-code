@@ -1,19 +1,31 @@
 ---
 name: leetcode-solution-writer
-description: Write or complete LeetCode solution Markdown files with Java code and Traditional Chinese explanations. Use when the user asks to add a solution, explanation, algorithm, Java implementation, complexity analysis, or documentation for a LeetCode problem in a repository.
+description: Write or complete LeetCode solution Markdown files with the original English problem statement, Java code, and Traditional Chinese explanations. Use when the user asks to add a solution, explanation, algorithm, Java implementation, complexity analysis, or documentation for a LeetCode problem in a repository.
 ---
 
 # LeetCode Solution Writer
 
-撰寫或補完 LeetCode 題解文件，題目章節保留英文原文，答案章節使用繁體中文說明，並預設提供 Java 程式碼。
+## Language Contract (Mandatory)
 
-- 題目章節保留英文原文
-- 題目章節保留英文原文
-- 題目章節保留英文原文
+- Keep the entire `## Problem` section in English.
+- Preserve the English problem statement, examples, `Input`, `Output`, `Explanation`, and `Constraints`; do not translate them into Chinese.
+- Treat `## Problem` as a protected source section: formatting may be improved, but its language and meaning must remain unchanged.
+- Write `## Answer`, the solution explanation, complexity analysis, and Java comments in Traditional Chinese (`zh-TW`).
+- This language split takes precedence over the repository convention for Chinese explanatory content.
+
+## Image Preservation Contract (Mandatory)
+
+- Treat every existing Markdown image reference (`![...](...)`), HTML image, linked image, and referenced local image asset as protected content.
+- Never remove, rename, replace, or move an existing image reference or asset unless the user explicitly asks for that change.
+- Preserve each image's exact relative position with respect to its surrounding heading, paragraph, example, input, output, and explanation.
+- When reformatting a document, keep image-reference lines in place and edit only the surrounding text.
+- Before finishing, compare the image references before and after editing and verify that every referenced local image still exists.
+
+撰寫或補完 LeetCode 題解文件，題目章節保留英文原文，答案章節使用繁體中文說明，並預設提供 Java 程式碼。
 
 ## Workflow
 
-1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`），將題目內容整理在固定的 `## Problem` 章節，並保留英文原文與核心內容。
+1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`）。先將 `## Problem` 視為受保護區塊，保留其中的英文題目敘述、範例、限制條件與輸入輸出；後續只編輯或補完 `## Answer`，不得把題目翻譯成中文。
 2. 從檔名、題目敘述或 LeetCode 連結確認題號、題名與難度；不要在未確認時猜測題意。
 3. 選擇適合的演算法，說明核心觀察、資料結構、指標／迴圈不變量，以及為何能得到正確答案。
 4. 補上可直接提交到 LeetCode 的 Java `class Solution`。除非題目要求，避免加入 `package`、`main` 或不必要的輸入輸出程式。
@@ -65,6 +77,22 @@ Explanation: The target 5 is found at index 2.
 - 若壓縮資料結構使用數字索引，應使用具名常數（例如 `SUM_INDEX`、`ROW_INDEX`）取代難以理解的 magic number，並在建立、取出與更新候選的位置補上繁體中文註解。
 - `## Problem` 區塊的題目敘述、限制條件、`Input`、`Output`、`Explanation` 與範例內容必須使用英文原文；`## Answer` 區塊的解說、程式碼註解與複雜度分析必須使用繁體中文。
 - 執行 Markdown whitespace／fence 檢查，並確認只修改使用者指定的題解檔案。
+
+## Language Review Checklist
+
+Before finishing, verify all of the following:
+
+- `## Problem` prose remains English.
+- Examples and constraints remain English.
+- `## Answer` prose and Java comments use Traditional Chinese.
+- No translation step has been applied to the protected `## Problem` section.
+
+## Image Review Checklist
+
+- Every pre-existing image reference is still present.
+- Image references remain in their original relative positions.
+- Every referenced local image asset exists.
+- No image was removed, renamed, replaced, or moved without explicit user permission.
 
 ## Markdown Rules
 
