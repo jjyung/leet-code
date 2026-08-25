@@ -30,6 +30,7 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 
 - 第一個 H1 存在，且與檔名（去掉 `.md`）完全一致。
 - `## Problem` 存在（固定使用此標題，不使用 `## Question`），並依序包含：難度標籤、英文原文題目敘述、限制條件、英文範例與 LeetCode 題目連結。
+- 題目保留英文原文
 - `## Answer` 存在，且其解題思路、程式碼註解與複雜度說明使用繁體中文；內容包含 `### 解題思路`、Java 程式碼區塊，以及複雜度說明。
 - 複雜度說明必須涵蓋關鍵判斷、邊界條件、時間複雜度與空間複雜度，並定義複雜度中的 `n`。
 
