@@ -7,6 +7,10 @@ description: Write or complete LeetCode solution Markdown files with Java code a
 
 撰寫或補完 LeetCode 題解文件，題目章節保留英文原文，答案章節使用繁體中文說明，並預設提供 Java 程式碼。
 
+- 題目章節保留英文原文
+- 題目章節保留英文原文
+- 題目章節保留英文原文
+
 ## Workflow
 
 1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`），將題目內容整理在固定的 `## Problem` 章節，並保留英文原文與核心內容。
