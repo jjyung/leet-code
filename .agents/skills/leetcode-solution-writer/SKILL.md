@@ -31,8 +31,8 @@ description: Write or complete LeetCode solution Markdown files with the origina
 4. 補上可直接提交到 LeetCode 的 Java `class Solution`。除非題目要求，避免加入 `package`、`main` 或不必要的輸入輸出程式。
 5. 在說明中明確標示時間複雜度與空間複雜度，並定義複雜度中的 `n`。
 6. 若使用 heap、queue 或其他候選集合，清楚說明每個元素代表什麼、初始化哪些候選、移除元素後如何產生下一個候選，以及維持的資料結構不變量。
-7. 檢查 Java 語法、邊界條件、Markdown code fence 與文件標題；必要時以最小範例驗證邏輯。
-8. 完成後執行 Review 階段，依照下方檢查表確認必要章節、範例格式、程式碼與內容一致性；未通過前不要交付文件。
+7. 檢查 Java 程式碼、邊界條件、Markdown code fence 與文件標題；Markdown 結構與格式檢查必須執行，但 Java 編譯或最小範例行為驗證只有在使用者明確要求、已有失敗訊息，或代理判斷確有必要時才執行。
+8. 完成後依照下方檢查表審閱必要章節、範例格式、程式碼與內容一致性，並在最後執行可用的 Markdown `Format Document`／lint hook；若環境沒有 formatter，改以 VS Code diagnostics 檢查 Markdown 錯誤。不要執行 Java 編譯或行為驗證，除非使用者明確要求、已有失敗訊息，或代理判斷確有必要。
 
 ## Review
 
@@ -76,7 +76,8 @@ Explanation: The target 5 is found at index 2.
 - 若使用壓縮資料結構（例如 `int[]` 儲存多個欄位），必須在程式碼附近明確寫出欄位格式，例如 `[sum, rowIndex, columnIndex]`；並說明每個 heap 元素是一個完整物件，而不是多個分開的 heap 元素。
 - 若壓縮資料結構使用數字索引，應使用具名常數（例如 `SUM_INDEX`、`ROW_INDEX`）取代難以理解的 magic number，並在建立、取出與更新候選的位置補上繁體中文註解。
 - `## Problem` 區塊的題目敘述、限制條件、`Input`、`Output`、`Explanation` 與範例內容必須使用英文原文；`## Answer` 區塊的解說、程式碼註解與複雜度分析必須使用繁體中文。
-- 執行 Markdown whitespace／fence 檢查，並確認只修改使用者指定的題解檔案。
+- 最後必須執行可用的 Markdown `Format Document`／lint hook，並確認 Markdown whitespace、heading、code fence、必要章節與檔案範圍；若環境沒有 formatter，使用 VS Code diagnostics 取代 hook 檢查。
+- Java 編譯、最小範例或其他行為驗證只有在使用者明確要求、已有失敗訊息，或代理判斷確有必要時才執行。
 
 ## Language Review Checklist
 
