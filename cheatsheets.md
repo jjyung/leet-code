@@ -57,6 +57,40 @@
 ### Trees & Graphs
 
 - **Binary Tree (DFS/BFS):** $O(n \cdot k)$ ($n$ 為節點數，$k$ 為每節點處理時間，通常為 $O(1)$)
+
+#### Binary Tree DFS Traversal
+
+令 `root` 為目前節點。遞迴走訪二元樹時，三個位置的差異在於「何時處理目前節點」：
+
+| 走訪方式 | 順序 | 常見用途 |
+| :--- | :--- | :--- |
+| **Inorder** | Left -> Root -> Right | BST 的結果會依遞增順序排列；常用於取得第 `k` 小元素 |
+| **Postorder** | Left -> Right -> Root | 子樹必須先完成計算；常用於自底向上的 DP、計算樹高與刪除樹 |
+
+```java
+void inorder(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+
+    inorder(root.left);       // 先處理左子樹
+    process(root);             // 再處理目前節點
+    inorder(root.right);       // 最後處理右子樹
+}
+
+void postorder(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+
+    postorder(root.left);      // 先處理左子樹
+    postorder(root.right);     // 再處理右子樹
+    process(root);             // 最後處理目前節點
+}
+```
+
+- **時間複雜度：** $O(n)$，每個節點只走訪一次。
+- **空間複雜度：** $O(h)$，`h` 為樹高，來自遞迴呼叫堆疊；平衡樹為 $O(\log n)$，最差的傾斜樹為 $O(n)$。
 - **Binary Search Tree (BST):** Search / Insert / Delete：平均 $O(\log n)$，最壞 $O(n)$
 - **Heap / Priority Queue:** Push $O(\log n)$, Pop Min/Max $O(\log n)$, Find Min/Max $O(1)$
 - **Binary Search:** $O(\log n)$
@@ -103,4 +137,4 @@
 
 ## 參考來源
 
-https://leetcode.com/explore/interview/card/cheatsheets/720/resources/4725/
+[LeetCode Interview Cheat Sheet](https://leetcode.com/explore/interview/card/cheatsheets/720/resources/4725/)
