@@ -42,7 +42,7 @@ Trie 的核心用途，是在大量字串中有效率地處理「完整字串」
 
 Trie 最有價值的地方，不是單純取代 `HashSet<String>`，而是能直接利用字串的前綴結構。當問題反覆詢問「哪些字串以這段內容開頭」時，Trie 通常比逐一檢查所有字串更自然。
 
-## 核心結構
+## 必要資料結構與演算法
 
 一個 Trie 通常包含以下元素：
 
@@ -129,6 +129,7 @@ Trie 中的節點可能同時是某個單字的結尾，也是更長單字的前
 | 題目名稱 | 難易度 | 連結 |
 | --- | --- | --- |
 <!-- markdownlint-disable MD033 -->
+| 208. Implement Trie (Prefix Tree) | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [208. Implement Trie (Prefix Tree)](./208.%20Implement%20Trie%20(Prefix%20Tree).md) |
 | 211. Design Add and Search Words Data Structure | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [211. Design Add and Search Words Data Structure](./211.%20Design%20Add%20and%20Search%20Words%20Data%20Structure.md) |
 <!-- markdownlint-enable MD033 -->
 
