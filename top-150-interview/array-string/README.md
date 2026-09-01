@@ -25,3 +25,27 @@
 | 238. Product of Array Except Self | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [238. Product of Array Except Self](./238.%20Product%20of%20Array%20Except%20Self.md) |
 | 274. H-Index | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [274. H-Index](./274.%20H-Index.md) |
 | 380. Insert Delete GetRandom O(1) | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [380. Insert Delete GetRandom O(1)](./380.%20Insert%20Delete%20GetRandom%20O(1).md) |
+
+## 解題思路提示
+
+陣列與字串題的第一步，是確認資料是否已排序、是否能原地修改，以及答案需要一次掃描還是需要維護前綴資訊：
+
+1. 排序資料優先考慮雙指標或二分搜尋；連續區間則檢查滑動視窗或前綴和。
+2. 題目要求原地操作時，通常用讀寫指標、反轉區間或從後往前填值。
+3. 需要快速查詢出現次數、位置或配對關係時，搭配 HashMap/HashSet。
+4. 每次掃描前先寫出不變量，例如「寫入指標前的內容已符合要求」。
+
+## 必要資料結構與演算法
+
+- **陣列/字串**：提供 $O(1)$ 索引存取；原地演算法可把額外空間維持在 $O(1)$。
+- **雙指標**：一個指標讀取輸入，另一個指標寫入保留結果，適合移除元素與合併。
+- **HashMap/HashSet**：平均 $O(1)$ 查詢計數、索引或是否看過；空間通常為 $O(n)$。
+- **前綴和與乘積**：把每個位置左側與右側的資訊分開累積，避免巢狀迴圈。
+- **Greedy**：跳躍、加油站等題目要證明局部選擇能保留後續可行性，而不是只憑直覺。
+
+## 複習提醒
+
+- 先確認輸入是否允許空陣列、重複值、負數與超長字串。
+- 原地題要明確分辨「有效區間」和「尚未讀取區間」，不要以陣列長度代替答案長度。
+- 反轉、旋轉、合併等題目特別容易發生索引越界，先用兩三個元素手算。
+- 看到 `O(n^2)` 暴力解時，優先問能否用 HashMap、排序、雙指標或前綴資訊降低重複工作。
