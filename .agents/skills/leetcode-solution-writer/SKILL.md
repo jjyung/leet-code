@@ -21,6 +21,13 @@ description: Write or complete LeetCode solution Markdown files with the origina
 - When reformatting a document, keep image-reference lines in place and edit only the surrounding text.
 - Before finishing, compare the image references before and after editing and verify that every referenced local image still exists.
 
+## Verification Policy
+
+- Do not perform actual Java compilation or execute the solution code as part of this skill.
+- Do not invoke `javac`, Maven, Gradle, an IDE build, or an equivalent compiler/build command as part of this skill.
+- Validate Java statically instead: inspect the LeetCode method signature, imports, braces, types, control flow, comments, and Markdown code fence.
+- When reporting the result, state that compilation was not performed; do not claim that the Java code compiled successfully.
+
 撰寫或補完 LeetCode 題解文件，題目章節保留英文原文，答案章節使用繁體中文說明，並預設提供 Java 程式碼。
 
 ## Workflow
