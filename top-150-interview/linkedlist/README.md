@@ -9,6 +9,7 @@
 | 021. Merge Two Sorted Lists | <span style="color: #16a34a;"><strong>Easy</strong></span> | [021. Merge Two Sorted Lists](./021.%20Merge%20Two%20Sorted%20Lists.md) |
 | 061. Rotate List | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [061. Rotate List](./061.%20Rotate%20List.md) |
 | 082. Remove Duplicates from Sorted List II | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [082. Remove Duplicates from Sorted List II](./082.%20Remove%20Duplicates%20from%20Sorted%20List%20II.md) |
+| 086. Partition List | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [086. Partition List](./086.%20Partition%20List.md) |
 | 092. Reverse Linked List II | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [092. Reverse Linked List II](./092.%20Reverse%20Linked%20List%20II.md) |
 | 141. Linked List Cycle | <span style="color: #16a34a;"><strong>Easy</strong></span> | [141. Linked List Cycle](./141.%20Linked%20List%20Cycle.md) |
 
