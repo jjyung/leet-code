@@ -7,6 +7,7 @@
 | 002. Add Two Numbers | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [002. Add Two Numbers](./002.%20Add%20Two%20Numbers.md) |
 | 019. Remove Nth Node From End of List | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [019. Remove Nth Node From End of List](./019.%20Remove%20Nth%20Node%20From%20End%20of%20List.md) |
 | 021. Merge Two Sorted Lists | <span style="color: #16a34a;"><strong>Easy</strong></span> | [021. Merge Two Sorted Lists](./021.%20Merge%20Two%20Sorted%20Lists.md) |
+| 082. Remove Duplicates from Sorted List II | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [082. Remove Duplicates from Sorted List II](./082.%20Remove%20Duplicates%20from%20Sorted%20List%20II.md) |
 | 092. Reverse Linked List II | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [092. Reverse Linked List II](./092.%20Reverse%20Linked%20List%20II.md) |
 | 141. Linked List Cycle | <span style="color: #16a34a;"><strong>Easy</strong></span> | [141. Linked List Cycle](./141.%20Linked%20List%20Cycle.md) |
 
