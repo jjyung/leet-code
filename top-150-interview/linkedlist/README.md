@@ -12,6 +12,7 @@
 | 086. Partition List | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [086. Partition List](./086.%20Partition%20List.md) |
 | 092. Reverse Linked List II | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [092. Reverse Linked List II](./092.%20Reverse%20Linked%20List%20II.md) |
 | 141. Linked List Cycle | <span style="color: #16a34a;"><strong>Easy</strong></span> | [141. Linked List Cycle](./141.%20Linked%20List%20Cycle.md) |
+| 146. LRU Cache | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [146. LRU Cache](./146.%20LRU%20Cache.md) |
 
 ## 解題思路提示
 
