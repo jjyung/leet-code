@@ -5,6 +5,7 @@
 | 題目名稱 | 難易度 | 連結 |
 | --- | --- | --- |
 | 106. Construct Binary Tree from Inorder and Postorder Traversal | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [106. Construct Binary Tree from Inorder and Postorder Traversal](./106.%20Construct%20Binary%20Tree%20from%20Inorder%20and%20Postorder%20Traversal.md) |
+| 222. Count Complete Tree Nodes | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [222. Count Complete Tree Nodes](./222.%20Count%20Complete%20Tree%20Nodes.md) |
 | 226. Invert Binary Tree | <span style="color: #16a34a;"><strong>Easy</strong></span> | [226. Invert Binary Tree](./226.%20Invert%20Binary%20Tree.md) |
 
 ## 解題思路提示
