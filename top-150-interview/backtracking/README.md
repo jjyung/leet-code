@@ -1,10 +1,11 @@
-# Backtracking Index
+﻿# Backtracking Index
 
 此索引整理 `top-150-interview/backtracking` 的題目，並提供回溯法通用模板與複習重點。
 
 | 題目名稱 | 難易度 | 連結 |
 | --- | --- | --- |
 | 017. Letter Combinations of a Phone Number | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [017. Letter Combinations of a Phone Number](./17.%20Letter%20Combinations%20of%20a%20Phone%20Number.md) |
+| 039. Combination Sum | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [039. Combination Sum](./039.%20Combination%20Sum.md) |
 | 046. Permutations | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [046. Permutations](./46.%20Permutations.md) |
 | 077. Combinations | <span style="color: #f59e0b;"><strong>Medium</strong></span> | [077. Combinations](./77.%20Combinations.md) |
 
