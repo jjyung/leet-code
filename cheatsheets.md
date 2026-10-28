@@ -94,6 +94,7 @@ void postorder(TreeNode root) {
 - **Binary Search Tree (BST):** Search / Insert / Delete：平均 $O(\log n)$，最壞 $O(n)$
 - **Heap / Priority Queue:** Push $O(\log n)$, Pop Min/Max $O(\log n)$, Find Min/Max $O(1)$
 - **Binary Search:** $O(\log n)$
+- **計算二分搜尋中點：** 使用 `left + (right - left) / 2`，避免 `left + right` 在 `int` 範圍較大時溢位；在一般索引範圍 `0 <= left <= right` 中，`right - left` 不會超出 `int` 範圍。
 - **Graph DFS / BFS:** 時間 $O(n \cdot k + e)$，空間 $O(n + e)$ ($n$ 為點，$e$ 為邊)
 - **Dynamic Programming:** 時間 $O(n \cdot k)$，空間 $O(n)$ ($n$ 為狀態數，$k$ 為轉移複雜度)
 

@@ -384,7 +384,7 @@ class Solution {
         int left = 0, right = arr.length - 1;
 
         while (left <= right) {
-            int mid = left + (right - left) / 2; // 防止 overflow
+            int mid = left + (right - left) / 2; // 先算區間長度，避免 left + right 溢位
             if (arr[mid] == target) {
                 return mid;
             } else if (arr[mid] < target) {
@@ -407,7 +407,7 @@ class Solution {
         int left = 0, right = arr.length;
 
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) / 2; // 先算區間長度，避免 left + right 溢位
             if (arr[mid] < target) {
                 left = mid + 1;
             } else {
@@ -428,7 +428,7 @@ class Solution {
         int left = 0, right = arr.length;
 
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) / 2; // 先算區間長度，避免 left + right 溢位
             if (arr[mid] <= target) {
                 left = mid + 1; // 持續往右逼近
             } else {
@@ -450,7 +450,7 @@ class Solution {
         int right = /* 答案上界 */ 1_000_000;
 
         while (left <= right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) / 2; // 先算區間長度，避免 left + right 溢位
             if (check(mid, arr)) {
                 right = mid - 1; // mid 可行，嘗試更小
             } else {
