@@ -10,6 +10,7 @@ description: Write or complete LeetCode solution Markdown files with the origina
 - Keep the entire `## Problem` section in English.
 - Preserve the English problem statement, examples, `Input`, `Output`, `Explanation`, and `Constraints`; do not translate them into Chinese.
 - Treat `## Problem` as a protected source section: formatting may be improved, but its language and meaning must remain unchanged.
+- Protected means the English content, names, values, examples, constraints, and meaning must not change. Formatting corrections are allowed and required when needed to meet this skill's Markdown rules, including moving example fields into `text` code blocks, correcting Markdown syntax for mathematical notation, and repairing a malformed link when its intended LeetCode URL is unambiguous.
 - Write `## Answer`, the solution explanation, complexity analysis, and Java comments in Traditional Chinese (`zh-TW`).
 - This language split takes precedence over the repository convention for Chinese explanatory content.
 
@@ -32,14 +33,24 @@ description: Write or complete LeetCode solution Markdown files with the origina
 
 ## Workflow
 
-1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`）。先將 `## Problem` 視為受保護區塊，保留其中的英文題目敘述、範例、限制條件與輸入輸出；後續只編輯或補完 `## Answer`，不得把題目翻譯成中文。
+1. 讀取目標檔案與最近的 repository instructions（例如 `AGENTS.md`），並記錄編輯前的圖片引用與檔案狀態。將 `## Problem` 視為語意受保護區塊：不得翻譯或改變英文題意、範例數值、變數名稱、限制條件或輸入輸出。若其 Markdown 格式不符合本 skill 的規範，必須在保留語意與圖片位置的前提下修正格式；不可用「只改 Answer」為由略過必要修正。一般情況仍只補完 `## Answer`。
 2. 從檔名、題目敘述或 LeetCode 連結確認題號、題名與難度；不要在未確認時猜測題意。
 3. 選擇適合的演算法，說明核心觀察、資料結構、指標／迴圈不變量，以及為何能得到正確答案。
 4. 補上可直接提交到 LeetCode 的 Java `class Solution`。除非題目要求，避免加入 `package`、`main` 或不必要的輸入輸出程式。
 5. 在說明中明確標示時間複雜度與空間複雜度，並定義複雜度中的 `n`。
 6. 若使用 heap、queue 或其他候選集合，清楚說明每個元素代表什麼、初始化哪些候選、移除元素後如何產生下一個候選，以及維持的資料結構不變量。
-7. 檢查 Java 程式碼、邊界條件、Markdown code fence 與文件標題；Markdown 結構與格式檢查必須執行，但 Java 編譯或最小範例行為驗證只有在使用者明確要求、已有失敗訊息，或代理判斷確有必要時才執行。
-8. 完成後依照下方檢查表審閱必要章節、範例格式、程式碼與內容一致性，並在最後執行可用的 Markdown `Format Document`／lint hook；若環境沒有 formatter，改以 VS Code diagnostics 檢查 Markdown 錯誤。不要執行 Java 編譯或行為驗證，除非使用者明確要求、已有失敗訊息，或代理判斷確有必要。
+7. 執行下方「完成前驗證」：先跑本 skill 的結構驗證器，再人工檢查語意、語言、邊界條件、演算法與程式碼一致性。若驗證失敗，先修正再重跑；不可帶著已知失敗回報完成。
+8. 若 repository 提供 Markdown formatter／lint hook，對目標文件執行並檢查結果；若沒有，使用本 skill 的結構驗證器及 CLI 靜態檢查。只有使用者或 repository instructions 明確允許操作 UI 時，才使用 VS Code diagnostics。不可為完成格式檢查而違反 UI 限制。
+9. 最後確認只修改本次目標文件及本 skill 明確需要的驗證資源，並再次比較圖片引用；依 Verification Policy 不執行 Java 編譯或解法行為驗證，除非使用者明確要求、已有失敗訊息，或代理判斷確有必要。
+
+### 完成前驗證（Mandatory Gate）
+
+- 執行 `python3 .agents/skills/leetcode-solution-writer/scripts/validate_solution_markdown.py <題解檔案路徑>`。此驗證器檢查標題與檔名、難度標籤、必要章節、Problem 範例格式、題目連結、Java 區塊與常見 Markdown whitespace。不得只檢查 `## Answer` 而跳過 `## Problem`。
+- 逐字確認 Problem 的原文語意、所有範例輸入／輸出／解釋與限制未被改變；僅修正排版時，確認文字仍為英文。
+- 確認每個 Example 標題在 code block 外；該範例的 `Input`、`Output`、`Explanation`（若原題提供）同處一個 `text` code block，且值與原文一致。
+- 確認 Answer 解說與 Java 註解使用繁體中文，方法簽名符合 LeetCode，程式結構、imports、型別、控制流程與註解經靜態檢查，時間／空間複雜度與演算法一致並定義變數。
+- 比較編輯前後的 Markdown／HTML／linked image references；確認引用未刪除或移位，所有相對路徑圖片資產仍存在。
+- 檢查 `git status --short`，確認沒有修改題解目標以外的無關檔案。回報時說明執行過哪些 Markdown 檢查；明確說明未編譯 Java。
 
 ## Review
 
@@ -83,7 +94,7 @@ Explanation: The target 5 is found at index 2.
 - 若使用壓縮資料結構（例如 `int[]` 儲存多個欄位），必須在程式碼附近明確寫出欄位格式，例如 `[sum, rowIndex, columnIndex]`；並說明每個 heap 元素是一個完整物件，而不是多個分開的 heap 元素。
 - 若壓縮資料結構使用數字索引，應使用具名常數（例如 `SUM_INDEX`、`ROW_INDEX`）取代難以理解的 magic number，並在建立、取出與更新候選的位置補上繁體中文註解。
 - `## Problem` 區塊的題目敘述、限制條件、`Input`、`Output`、`Explanation` 與範例內容必須使用英文原文；`## Answer` 區塊的解說、程式碼註解與複雜度分析必須使用繁體中文。
-- 最後必須執行可用的 Markdown `Format Document`／lint hook，並確認 Markdown whitespace、heading、code fence、必要章節與檔案範圍；若環境沒有 formatter，使用 VS Code diagnostics 取代 hook 檢查。
+- 最後必須執行「完成前驗證」中的結構驗證器，並確認 Markdown whitespace、heading、code fence、必要章節與檔案範圍。若環境有 Markdown formatter／lint hook，額外執行該 hook；沒有時使用 CLI 靜態檢查，不得違反 UI 操作限制。
 - Java 編譯、最小範例或其他行為驗證只有在使用者明確要求、已有失敗訊息，或代理判斷確有必要時才執行。
 
 ## Language Review Checklist
