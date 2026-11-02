@@ -55,9 +55,12 @@ def main() -> None:
         if len(blocks) != 1:
             fail(f"{match.group().strip()} must have exactly one text code block")
         block = blocks[0]
-        for field in ("Input:", "Output:", "Explanation:"):
+        for field in ("Input:", "Output:"):
             if not re.search(rf"(?m)^{re.escape(field)}\s*\S", block):
                 fail(f"{match.group().strip()} text block must contain {field}")
+        outside_block = section.replace(f"```text\n{block}\n```", "", 1)
+        if re.search(r"(?m)^\s*Explanation:\s*\S", outside_block):
+            fail(f"{match.group().strip()} Explanation must be inside the text block")
 
     if "### 解題思路" not in answer:
         fail("## Answer must include ### 解題思路")
